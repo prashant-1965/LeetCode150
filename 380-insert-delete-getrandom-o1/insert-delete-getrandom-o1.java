@@ -7,6 +7,7 @@ class RandomizedSet {
         map = new HashMap<>();
         lt=  new ArrayList<>();
         rand = new Random();
+
     }
     
     public boolean insert(int val) {
@@ -27,7 +28,6 @@ class RandomizedSet {
     }
     
     public int getRandom() {
-        
         return lt.get(rand.nextInt(lt.size()));
     }
 }
