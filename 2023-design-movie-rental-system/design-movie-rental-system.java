@@ -67,7 +67,7 @@ class MovieRentingSystem {
 
     
     public void rent(int shop, int movie) {
-        String key = shop + "#" + movie;
+        String key = shop + "@" + movie;
         ShopPricing val = mapNums[movie].get(shop);
         ShopPricing temp = new ShopPricing(shop, val.pricing, movie);
         dropSet.add(temp);
@@ -78,7 +78,7 @@ class MovieRentingSystem {
 
     
     public void drop(int shop, int movie) {
-        String key = shop + "#" + movie;
+        String key = shop + "@" + movie;
         ShopPricing sp = dropMap.get(key);
         ShopPricing val = new ShopPricing(shop, sp.pricing);
         set[movie].add(val);
