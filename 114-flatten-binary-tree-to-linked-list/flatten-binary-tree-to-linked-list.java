@@ -16,22 +16,18 @@
 class Solution {
     public static TreeNode last;
     public void flatten(TreeNode root) {
-        dfs(root);
-    }
-    public static void dfs(TreeNode root){
         if(root==null) return;
-        dfs(root.left);
+        flatten(root.left);
         if(root.left!=null){
             last.right = root.right;
             root.right = root.left;
             root.left=null;
             root = last.right;
-            dfs(root);
+            flatten(root);
         }
         if(root!=null){
-            dfs(root.right);
+            flatten(root.right);
         }
         if(root!=null && root.left==null && root.right==null) last = root;
-        // System.out.println(last.val);
     }
 }
