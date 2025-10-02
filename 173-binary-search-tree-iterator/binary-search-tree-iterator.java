@@ -28,10 +28,7 @@ class BSTIterator {
     }
     
     public boolean hasNext() {
-        if(i<lt.size()){
-            return true;
-        }
-        return false;
+        return i<lt.size()?true:false;
     }
     public void dfs(TreeNode root){
         if(root==null) return;
