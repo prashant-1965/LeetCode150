@@ -21,15 +21,11 @@ class Solution {
         return total;
     }
     public static void dfs(int sum, TreeNode root){
-        if(root==null){
-            return;
-        }
+        if(root==null)return;
         if(root.left==null && root.right==null){
-            // System.out.println(sum*10+root.val+" "+total);
             total+=(sum*10+root.val); return;
         }
-        sum = sum*10+root.val;
-        dfs(sum,root.left);
-        dfs(sum,root.right);
+        dfs(sum*10+root.val,root.left);
+        dfs(sum*10+root.val,root.right);
     }
 }
