@@ -22,10 +22,11 @@ class Solution {
         if(nums[row][col]=='X' || track[row][col]) return true;
         track[row][col]=true;
         path[row][col]=true;
-        boolean top = dfs(row-1,col,nums,path);
-        boolean down = dfs(row+1,col,nums,path);
-        boolean left = dfs(row,col-1,nums,path);
-        boolean right = dfs(row,col+1,nums,path);
+        boolean top = false, down=false, left= false, right=false;
+        top |= dfs(row-1,col,nums,path);
+        down |= dfs(row+1,col,nums,path);
+        left |= dfs(row,col-1,nums,path);
+        right |= dfs(row,col+1,nums,path);
         return top && down && left && right;
         
     }
